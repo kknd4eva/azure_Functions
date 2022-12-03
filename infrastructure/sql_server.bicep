@@ -10,6 +10,16 @@ resource sqlServer 'Microsoft.Sql/servers@2022-05-01-preview' = {
   }
 }
 
+// Let me into my own server
+resource SQLAllConnectionsAllowed 'Microsoft.Sql/servers/firewallRules@2020-11-01-preview' = {
+  name: 'AllowMyPublicIp'
+  parent: sqlServer
+  properties: {
+    startIpAddress: '121.200.21.94'
+    endIpAddress: '121.200.21.94'
+  }
+}
+
 resource sqlDB 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   parent: sqlServer
   name: 'azurefunctiondb'
