@@ -132,12 +132,11 @@ Profit!
 
 ### To deploy the function
 
-#### Build the function dlls
+#### Build the function
 ```
-dotnet build
+dotnet publish -c release
 ```
-
 #### Deploy to Azure 
 ```
-
+az functionapp deployment source config-zip -g rg-sqlfunctions -n <function app> --src publish.zip
 ```
