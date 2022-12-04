@@ -15,8 +15,8 @@ resource SQLAllConnectionsAllowed 'Microsoft.Sql/servers/firewallRules@2020-11-0
   name: 'AllowMyPublicIp'
   parent: sqlServer
   properties: {
-    startIpAddress: '121.200.21.94'
-    endIpAddress: '121.200.21.94'
+    startIpAddress: '<your public ip here>'
+    endIpAddress: '<your public ip here>'
   }
 }
 
